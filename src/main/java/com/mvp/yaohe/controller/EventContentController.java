@@ -18,7 +18,7 @@ public class EventContentController {
     @Autowired
     private EventContentService eventContentService;
 
-    @GetMapping("/test/all")
+    @GetMapping("/test/allGet")
     public List<EventContent> getAllEventContents() {
         List<EventContent> eventContents = eventContentService.queryList();
         return eventContents;
