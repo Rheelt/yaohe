@@ -2,6 +2,7 @@ package com.mvp.yaohe.controller;
 
 import com.mvp.yaohe.domain.EventContent;
 import com.mvp.yaohe.service.EventContentService;
+import com.mvp.yaohe.vo.BasicResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,9 +20,9 @@ public class EventContentController {
     private EventContentService eventContentService;
 
     @GetMapping("/test/allGet")
-    public List<EventContent> getAllEventContents() {
+    public BasicResultVO<List<EventContent>> getAllEventContents() {
         List<EventContent> eventContents = eventContentService.queryList();
-        return eventContents;
+        return BasicResultVO.success(eventContents);
     }
 
     @PostMapping("/test/allPost")
